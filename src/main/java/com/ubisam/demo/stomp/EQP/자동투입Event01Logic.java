@@ -3,7 +3,7 @@ package com.ubisam.demo.stomp.EQP;
 import lombok.Locked.Read;
 import lombok.Locked.Write;
 
-public class 자동동작모드Event01Logic {
+public class 자동투입Event01Logic {
 
     // private XXXXRepository XXXXRepository;
     // private StompClient stompClient;
