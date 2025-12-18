@@ -1,4 +1,4 @@
-package com.ubisam.demo.domain.Action.EQP.자동동작모드설정;
+package com.ubisam.demo.domain.Action.EQP.자동동작모드;
 
 import com.ubisam.demo.domain.ObjectPLC;
 
