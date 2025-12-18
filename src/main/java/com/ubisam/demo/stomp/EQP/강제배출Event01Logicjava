@@ -1,0 +1,26 @@
+package com.ubisam.demo.stomp.EQP;
+
+public class 설비정지Event01Logic {
+
+    // private XXXXRepository XXXXRepository;
+    // private StompClient stompClient;
+
+    public void receive(boolean ForceOutBit){
+        // STOMPE에 들어온거 받아서 로직 처리 (=> 받아온거는 형태가 다양함.) 
+        // DB에 1줄 인서트
+        
+        // if(ForceOutBit == 1){
+        //      PLC의 CellIDBCRForOut필드값 Read
+        //      if(강제배출 배드셀일 경우){
+        //          PLC에 해당하는 필드에 troubleCode 전송
+        //
+        //       }
+        //       else {  강제배출이 아닌경우
+        //          PLC 메모리의 ForceOutConfirm 필드에 1 Write
+        //       }
+        // }
+
+
+    }
+    
+}
