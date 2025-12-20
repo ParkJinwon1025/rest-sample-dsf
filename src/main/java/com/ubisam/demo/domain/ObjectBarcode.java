@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+// 바코드 리더기
 @Entity
 @Data
 public class ObjectBarcode {
