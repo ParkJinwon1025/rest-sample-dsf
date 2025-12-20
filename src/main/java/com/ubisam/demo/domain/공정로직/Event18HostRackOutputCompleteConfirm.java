@@ -1,17 +1,19 @@
 package com.ubisam.demo.domain.공정로직;
 
+import com.ubisam.demo.domain.ObjectRack;
 import com.ubisam.demo.domain.ObjectTray;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 배출 Tray Break 완료 요청 Confirm
+// Rack 출고 완료 요청 Confirm
 @Data
-public class Event24EqpTrayBreakCompleteConfirm {
+public class Event18HostRackOutputCompleteConfirm {
 
     @Id
     private Long timestamp;
-    private ObjectTray objectTray;
+    private ObjectTray ObjecTray;
+    private ObjectRack objectRack;
     private String status; //응답
     
 }

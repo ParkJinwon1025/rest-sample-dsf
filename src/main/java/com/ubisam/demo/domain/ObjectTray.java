@@ -1,5 +1,6 @@
 package com.ubisam.demo.domain;
 
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -27,6 +28,8 @@ public class ObjectTray {
     private Integer inputCellInt; // 투입 수량
     private Integer procInputCellCnt; // 공정에 투입 Cell 수량
     private Integer currCellCnt; // Tray내 Cell의 수량
+
+    private List<ObjectCell> cellList;
 
     private Long startTime;
     private Long endTime;

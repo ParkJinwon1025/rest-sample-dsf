@@ -12,7 +12,6 @@ public class Event54EqpRackOutputCompleteRequest {
 
     @Id
     private Long timestamp;
-    private ObjectTray objectTray;
     private ObjectRack objectRack;
 
 }

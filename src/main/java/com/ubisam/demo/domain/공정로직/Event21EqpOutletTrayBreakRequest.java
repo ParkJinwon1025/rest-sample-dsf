@@ -5,12 +5,12 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입부 Tray 투입 요청 with TrayID
+// 배출 Tray Break 요청 with TrayId
 @Data
-public class Event07EqpInletTrayInputRequest {
-    
+public class Event21EqpOutletTrayBreakRequest {
+
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
-
+    
 }

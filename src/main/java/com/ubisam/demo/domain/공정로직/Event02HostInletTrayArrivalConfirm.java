@@ -5,12 +5,12 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입 Tray 투입 완료 요청
+// 투입부 Tray 도착 Confirm
 @Data
-public class Event17EqpInletTrayInputCompleteRequest {
+public class Event02HostInletTrayArrivalConfirm {
     
     @Id
     private Long timestamp;
-    private ObjectTray objectTray;
-    
+    private ObjectTray ObjecTray;
+    private String status; // 도착 확인 성공 여부
 }

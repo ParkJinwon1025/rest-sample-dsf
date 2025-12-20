@@ -8,7 +8,7 @@ import lombok.Data;
 
 // Recipe 요청 Confirm with RouteID
 @Data
-public class Event12HostRecipeInfoConfirm {
+public class Event14HostRecipeInfoConfirm {
     
     @Id
     private Long timestamp;

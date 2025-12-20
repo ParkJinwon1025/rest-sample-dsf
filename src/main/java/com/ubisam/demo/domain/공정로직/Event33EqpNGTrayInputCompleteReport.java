@@ -5,12 +5,12 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 배출 Tray 투입 완료 요청
+// NG Tray 투입 완료 요청
 @Data
-public class Event25EventEqpOutletTrayInputCompleteRequest {
+public class Event33EqpNGTrayInputCompleteReport {
 
     @Id
-    private Long stamp;
+    private Long timestamp;
     private ObjectTray objectTray;
     
 }

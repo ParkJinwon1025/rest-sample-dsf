@@ -12,7 +12,6 @@ public class Event43HostCellGradeProcessConfirm {
     @Id
     private Long timestamp;
     private ObjectCell objectCell;
-    // 응답 Object 추가할지말지 고민 => 안하는 게 맞지 않을까
     private String status; 
     
 }

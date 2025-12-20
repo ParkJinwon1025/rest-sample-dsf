@@ -5,13 +5,13 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입 Tray 투입 완료 요청 Confirm
+// 배출 Tray Break 요청 Confirm
 @Data
-public class Event18HostInletTrayInputCompleteConfirm {
+public class Event22HostOutletTrayBreakConfirm {
 
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
-    private String status;
+    private String status; //응답
     
 }
