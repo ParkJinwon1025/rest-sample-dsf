@@ -1,4 +1,4 @@
-package com.ubisam.demo.domain.설비관리.설비자동대기모드;
+package com.ubisam.demo.domain.설비관리.설비화재;
 
 import com.ubisam.demo.domain.ObjectDSF;
 
@@ -7,7 +7,7 @@ import lombok.Data;
 
 // Host 알람 Response;
 @Data
-public class Event02HostAutoWaitStateResponse {
+public class Event02HostFireStateAck {
     
     @Id
     private Long timestamp;

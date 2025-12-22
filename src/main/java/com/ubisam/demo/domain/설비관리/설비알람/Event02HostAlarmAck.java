@@ -7,7 +7,7 @@ import lombok.Data;
 
 // Host 알람 Response;
 @Data
-public class Event02HostAlarmResponse {
+public class Event02HostAlarmAck {
     
     @Id
     private Long timestamp;
