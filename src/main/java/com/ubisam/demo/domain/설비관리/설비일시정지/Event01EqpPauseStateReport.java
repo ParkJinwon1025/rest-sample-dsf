@@ -1,4 +1,4 @@
-package com.ubisam.demo.domain.설비관리.설비정지;
+package com.ubisam.demo.domain.설비관리.설비일시정지;
 
 import com.ubisam.demo.domain.ObjectEQP;
 

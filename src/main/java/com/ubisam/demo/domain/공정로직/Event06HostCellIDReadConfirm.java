@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ubisam.demo.domain.ObjectBarcode;
 import com.ubisam.demo.domain.ObjectCell;
+import com.ubisam.demo.domain.ObjectUser;
 
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -16,6 +17,7 @@ public class Event06HostCellIDReadConfirm {
     private Long timestamp;
     private List<ObjectCell> cellList;
     private ObjectBarcode objectBarcode;
+    private ObjectUser objectUser;
     private String status; // OK / NG
     
 }

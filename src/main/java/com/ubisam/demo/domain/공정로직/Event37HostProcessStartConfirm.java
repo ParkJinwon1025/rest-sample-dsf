@@ -13,5 +13,7 @@ public class Event37HostProcessStartConfirm {
     @Id
     private Long timestamp;
     private ObjectUser user;
+    private ObjectUser objectUser;
+    private String status; 
 
 }
