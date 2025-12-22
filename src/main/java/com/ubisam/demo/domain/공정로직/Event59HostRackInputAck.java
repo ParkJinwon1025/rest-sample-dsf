@@ -1,19 +1,19 @@
 package com.ubisam.demo.domain.공정로직;
 
-import com.ubisam.demo.domain.ObjectTray;
+import com.ubisam.demo.domain.ObjectRack;
 import com.ubisam.demo.domain.ObjectUser;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// NG Tray 배출 완료 보고 Confirm
+// Rack 출고 요청 Confirm
 @Data
-public class Event66HostNGTrayOutputCompleteConfirm {
+public class Event59HostRackInputAck {
 
     @Id
     private Long timestamp;
-    private ObjectTray objectTray;
+    private ObjectRack objectRack;
     private ObjectUser objectUser;
-    private String status;
+    private String status; //응답
     
 }

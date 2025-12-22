@@ -1,18 +1,20 @@
 package com.ubisam.demo.domain.공정로직;
 
-import com.ubisam.demo.domain.ObjectTray;
+
+import com.ubisam.demo.domain.ObjectEQP;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입 Tray 전체 Cell Valid Check 요청 Confirm
+// 공정 시작 보고 Confirm
 @Data
-public class Event44HostInletTrayAllCellValidCheckConfirm {
-    
+public class Event38HostProcessStartAck {
+
     @Id
     private Long timestamp;
-    private ObjectTray objectTray;
-
+    private ObjectEQP objectEQP;
+    
     private String ackStatus; // OK/NG 등
     private String reason; // NG이면 이유 
+
 }

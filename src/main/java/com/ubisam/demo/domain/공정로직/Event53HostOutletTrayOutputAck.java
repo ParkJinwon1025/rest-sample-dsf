@@ -8,7 +8,7 @@ import lombok.Data;
 
 //배출 Tray 배출 요청 Confirm
 @Data
-public class Event53HostOutletTrayOutputConfirm {
+public class Event53HostOutletTrayOutputAck {
 
     @Id
     private Long timestamp;
