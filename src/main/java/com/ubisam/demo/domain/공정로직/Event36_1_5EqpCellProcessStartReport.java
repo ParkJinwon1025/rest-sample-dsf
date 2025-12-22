@@ -13,5 +13,6 @@ public class Event36_1_5EqpCellProcessStartReport {
     private Long timestamp;
     private ObjectCell objectCell;
     
-    private String action; // Start / End 
+    private ProcessStatus processStatus; // START / END 
+    public enum ProcessStatus { START , END }
 }

@@ -15,6 +15,7 @@ public class Event04BCRTrayIDRead {
     private ObjectTray objectTray;
     private ObjectBarcode objectBarcode;
     
-    private boolean isBcrReadSucess; // 바코드 Read 성공 여부
+    private ReadStatus readStatus;
+    public enum ReadStatus { SUCCESS, FAIL }
 
 }

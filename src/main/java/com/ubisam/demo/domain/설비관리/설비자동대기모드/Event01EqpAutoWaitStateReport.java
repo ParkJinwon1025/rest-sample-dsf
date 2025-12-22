@@ -13,5 +13,6 @@ public class Event01EqpAutoWaitStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
     
-    private String action;
+    private AutoWaitStatus autoWaitStatus;
+    private enum AutoWaitStatus { AUTOWAIT, NONE }
 }

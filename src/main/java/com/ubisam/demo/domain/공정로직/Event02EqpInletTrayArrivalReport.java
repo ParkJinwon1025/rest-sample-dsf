@@ -13,6 +13,7 @@ public class Event02EqpInletTrayArrivalReport {
     private Long timestamp;
     private ObjectTray ObjecTray;
 
-    private boolean isArrival; // 도착 여부
+    private ActionStatus actionStatus; // 도착 여부
+    public enum ActionStatus { ARRIVED, NOT_ARRIVED }
 
 }

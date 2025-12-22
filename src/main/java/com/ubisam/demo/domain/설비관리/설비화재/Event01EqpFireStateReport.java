@@ -13,6 +13,7 @@ public class Event01EqpFireStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
 
-    private String action;
+    private FireStatus fireStatus;
+    private enum FireStatus { FIRE, NORMAL }
     
 }

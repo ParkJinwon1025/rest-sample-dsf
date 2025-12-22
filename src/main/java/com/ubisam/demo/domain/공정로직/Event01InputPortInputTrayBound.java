@@ -16,6 +16,6 @@ public class Event01InputPortInputTrayBound {
     private ObjectPort objectPort;
     private ObjectTray objectTray;
 
-    private String action; // Bound / UnBound
-
+    private BoundStatus boundStatus; // BOUND / UNBOUND
+    public enum BoundStatus { BOUND, UNBOUND }
 }

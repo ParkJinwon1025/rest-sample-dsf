@@ -13,6 +13,7 @@ public class Event01EqpManualStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
 
-    private String action;
+    private OperationStatus operationStatus;
+    private enum OperationStatus { MANUAL, AUTO } 
     
 }

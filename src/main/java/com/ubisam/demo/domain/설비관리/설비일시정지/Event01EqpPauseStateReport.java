@@ -13,6 +13,7 @@ public class Event01EqpPauseStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
 
-    private String action;
+    private PauseStatus pauseStatus;
+    private enum PauseStatus { PAUSED, RUNNING }
     
 }

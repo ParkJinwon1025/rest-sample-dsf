@@ -12,5 +12,6 @@ public class Event01EqpHasTroubleStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
     
-    private String action;
+    private TroubleStatus troubleStatus; 
+    private enum TroubleStatus { TROUBLE, NONE }
 }

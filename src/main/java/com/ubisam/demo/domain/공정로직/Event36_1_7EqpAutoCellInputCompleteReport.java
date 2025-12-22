@@ -15,5 +15,6 @@ public class Event36_1_7EqpAutoCellInputCompleteReport {
     private ObjectTray objectTray;
     private ObjectCell objectCell;
     
-    private String action; // Complete / Not Complete
+    private CompleteStatus completeStatus; // COMPLETE / Not NOT_COMPLETE
+    public enum CompleteStatus { COMPLETE, NOT_COMPLETE }
 }

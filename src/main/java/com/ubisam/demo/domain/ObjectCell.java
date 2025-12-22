@@ -17,4 +17,13 @@ public class ObjectCell {
     private String type;
     private String location;
 
+    private int prodModel; // 생상 가능한 Model
+    private int routeId; // Route ID
+    private int LotId; // Lot ID
+
+    private String inputData; // Cell 생성 일자
+    private String inputObjectId; // Cell 생성 위치
+    private String inputLineId; // Cell 생성 라인
+
+
 }

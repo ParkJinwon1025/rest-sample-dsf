@@ -13,5 +13,6 @@ public class Event01EqpAlarmStateReport {
     private Long timestamp;
     private ObjectDSF objectDSF;
     
-    private String action;
+    private AlarmStatus alarmStatus;
+    private enum AlarmStatus { EXIST, NONE }
 }

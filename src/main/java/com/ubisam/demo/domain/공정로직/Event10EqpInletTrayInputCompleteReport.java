@@ -13,6 +13,7 @@ public class Event10EqpInletTrayInputCompleteReport {
     private Long timestamp;
     private ObjectTray objectTray;
 
-    private String action; // 투입 완료 / 미완료
+    private InputStatus inputStatus; // 투입 완료 / 미완료
+    public enum InputStatus { COMPLETED, NOT_COMPLETED }
     
 }

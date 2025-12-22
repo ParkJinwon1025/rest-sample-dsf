@@ -2,6 +2,7 @@ package com.ubisam.demo.domain.공정로직;
 
 import com.ubisam.demo.domain.ObjectPort;
 import com.ubisam.demo.domain.ObjectTray;
+import com.ubisam.demo.domain.공정로직.Event01InputPortInputTrayBound.BoundStatus;
 
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -15,6 +16,6 @@ public class Event62OutputPortOutputTrayBound {
     private ObjectPort objectPort;
     private ObjectTray objectTray;
 
-    private String action; // Bound / UnBound
+    private BoundStatus boundStatus; // Bound / UnBound
 
 }
