@@ -5,12 +5,13 @@ import com.ubisam.demo.domain.ObjectCell;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 수동 셀 투입 완료 보고 with CellID
+// 셀 공정 시작 보고 with CellID
 @Data
-public class Event35_2_13EqpManualCellInputCompleteReport {
-    
+public class Event36_1_5EqpCellProcessStartReport {
+
     @Id
     private Long timestamp;
     private ObjectCell objectCell;
     
+    private String action;
 }

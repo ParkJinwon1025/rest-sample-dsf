@@ -1,19 +1,17 @@
 package com.ubisam.demo.domain.공정로직;
 
 import com.ubisam.demo.domain.ObjectCell;
-import com.ubisam.demo.domain.ObjectUser;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입셀 정보 검사 요청 Confirm
+// 수동 셀 투입 완료 보고 with CellID
 @Data
-public class Event35_1_4HostInputCellInfoInspectionConfirm {
-
+public class Event36_2_13EqpManualCellInputCompleteReport {
+    
     @Id
     private Long timestamp;
     private ObjectCell objectCell;
-    private ObjectUser objectUser;
-    private String status;
     
+    private String action;
 }

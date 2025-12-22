@@ -5,12 +5,15 @@ import com.ubisam.demo.domain.ObjectCell;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 셀 공정 시작 보고 with CellID
+// 투입셀 정보 검사 요청 Confirm
 @Data
-public class Event35_1_5EqpCellProcessStartReport {
+public class Event36_2_4HostInputCellInfoInspectionAck {
 
     @Id
     private Long timestamp;
     private ObjectCell objectCell;
+    
+    private String ackStatus; // OK/NG 등
+    private String reason; // NG이면 이유
     
 }
