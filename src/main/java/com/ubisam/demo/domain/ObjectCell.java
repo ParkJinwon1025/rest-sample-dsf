@@ -17,14 +17,4 @@ public class ObjectCell {
     private String type;
     private String location;
 
-    private Long inputDate; // Cell 생성 일자
-    private String inputObjectId; // Cell 생성 위치
-    private String inputLineId; // Cell 생성 라인
-
-    private String grade; // 등급
-
-    private Long startTime; // 공정작업 시작시간
-    private Long endTime; // 공정작업 종료시간
-
-    
 }

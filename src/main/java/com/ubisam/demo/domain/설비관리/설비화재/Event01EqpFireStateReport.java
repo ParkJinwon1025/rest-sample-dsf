@@ -1,6 +1,6 @@
 package com.ubisam.demo.domain.설비관리.설비화재;
 
-import com.ubisam.demo.domain.ObjectEQP;
+import com.ubisam.demo.domain.ObjectDSF;
 
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -11,6 +11,8 @@ public class Event01EqpFireStateReport {
 
     @Id
     private Long timestamp;
-    private ObjectEQP ObjectEQP;
+    private ObjectDSF objectDSF;
+
+    private String action;
     
 }

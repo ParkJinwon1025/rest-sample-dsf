@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class ObjectEQP {
+public class ObjectDSF {
 
     @Id
     private UUID id;
