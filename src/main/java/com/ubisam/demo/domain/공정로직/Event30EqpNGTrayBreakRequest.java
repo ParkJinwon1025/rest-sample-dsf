@@ -1,19 +1,18 @@
 package com.ubisam.demo.domain.공정로직;
 
 import com.ubisam.demo.domain.ObjectTray;
-import com.ubisam.demo.domain.ObjectUser;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// NG Tray Break 완료 Confirm
+// NG Tray Break 요청 with TrayID
 @Data
-public class Event32HostNGTrayBreakCompleteConfirm {
+public class Event30EqpNGTrayBreakRequest {
 
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
-    private ObjectUser objectUser;
-    private String status; //응답
+
+    private String action;
     
 }

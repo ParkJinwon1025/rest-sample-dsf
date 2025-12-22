@@ -29,8 +29,6 @@ public class ObjectTray {
     private Integer procInputCellCnt; // 공정에 투입 Cell 수량
     private Integer currCellCnt; // Tray내 Cell의 수량
 
-    private List<ObjectCell> cellList;
-
     private Long startTime;
     private Long endTime;
 

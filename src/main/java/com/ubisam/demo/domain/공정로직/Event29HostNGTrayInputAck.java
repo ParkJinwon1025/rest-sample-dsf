@@ -5,12 +5,15 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 투입 Tray 투입 완료 보고
+// NG Tray 투입 요청 Confirm
 @Data
-public class Event11EqpInletTrayInputCompleteReport {
-    
+public class Event29HostNGTrayInputAck {
+
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
+    
+    private String ackStatus; // OK/NG 등
+    private String reason; // NG이면 이유
     
 }

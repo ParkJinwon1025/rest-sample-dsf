@@ -12,5 +12,7 @@ public class Event25EventEqpOutletTrayInputCompleteReport {
     @Id
     private Long stamp;
     private ObjectTray objectTray;
+
+    private String action;
     
 }

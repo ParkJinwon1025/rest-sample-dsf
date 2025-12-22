@@ -12,5 +12,7 @@ public class Event23EqpOutletTrayBreakCompleteRequest {
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
+
+    private String action;
     
 }

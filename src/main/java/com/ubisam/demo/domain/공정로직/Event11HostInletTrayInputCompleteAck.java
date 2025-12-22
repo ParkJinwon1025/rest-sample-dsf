@@ -1,19 +1,20 @@
 package com.ubisam.demo.domain.공정로직;
 
 import com.ubisam.demo.domain.ObjectTray;
-import com.ubisam.demo.domain.ObjectUser;
+
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// NG Tray 투입 완료 요청 Confirm
+// 투입 Tray 투입 완료 요청 Confirm
 @Data
-public class Event34HostNGTrayInputCompleteConfirm {
+public class Event11HostInletTrayInputCompleteAck {
 
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
-    private ObjectUser objectUser;
-    private String status;
+
+    private String ackStatus; // OK/NG 등
+    private String reason; // NG이면 이유;
     
 }

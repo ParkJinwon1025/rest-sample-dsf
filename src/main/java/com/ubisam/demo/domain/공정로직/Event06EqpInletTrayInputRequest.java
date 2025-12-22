@@ -7,10 +7,12 @@ import lombok.Data;
 
 // 투입부 Tray 투입 요청 with TrayID
 @Data
-public class Event07EqpInletTrayInputRequest {
+public class Event06EqpInletTrayInputRequest {
     
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
+
+    private String action; // Input / Output
 
 }

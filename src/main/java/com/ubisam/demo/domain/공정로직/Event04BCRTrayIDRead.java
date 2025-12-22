@@ -1,19 +1,18 @@
 package com.ubisam.demo.domain.공정로직;
 
+import com.ubisam.demo.domain.ObjectBarcode;
 import com.ubisam.demo.domain.ObjectTray;
-import com.ubisam.demo.domain.ObjectUser;
 
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 배출 Tray 투입 완료 요청 Confirm
+// 바코드리더기 TrayID Read
 @Data
-public class Event26HostOutletTrayInputCompleteConfirm {
-
+public class Event04BCRTrayIDRead {
+    
     @Id
     private Long timestamp;
     private ObjectTray objectTray;
-    private ObjectUser objectUser;
-    private String status; //응답
-    
+    private ObjectBarcode objectBarcode;
+
 }
