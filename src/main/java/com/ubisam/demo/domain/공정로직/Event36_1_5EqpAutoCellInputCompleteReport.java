@@ -6,9 +6,9 @@ import com.ubisam.demo.domain.ObjectTray;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-// 1-7. 자동 셀 투입 완료 보고 with CellID & TrayID
+// 1-5. 자동 셀 투입 완료 보고 with CellID & TrayID
 @Data
-public class Event36_1_7EqpAutoCellInputCompleteReport {
+public class Event36_1_5EqpAutoCellInputCompleteReport {
 
     @Id
     private Long timestamp;
