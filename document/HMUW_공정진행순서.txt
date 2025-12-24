@@ -1,0 +1,224 @@
+# HMUW_공정짆행순서 
+
+# 수정이력
+    1. 2025-08-21, 최초작성, 김구정, v0.1
+    2. 2025-08-22, 공정별 DB 정보 추가, 김구정, v0.2
+    3. 2025-08-26, 지그(Formation) 공정 정보 추가, 김구정, v0.3
+
+# ver 0.3
+
+
+[목차]
+1. DSF 공정순서
+2. Jifo 공정순서
+3. 지그 ip/port
+4. 지그 공정(OperGroup) 정보
+
+
+
+1. DSF 공정순서
+    1> CMD_InTray_Off2 : 투입트레이 투입 요청
+        - tTrayCurr : select
+        - tCellCurr : select
+        - tMstEquipment : update 
+        - SP_spGetRecipeBody
+        - tMstAgingRack : select 
+        - SP_spSetAgingRack
+
+    2> CMD_OutTray_Off2 : 배출(OK)트레이 투입 요청
+        - sp_SetTrayCellOutput
+        - tTrayCurr : select
+        - tMstEquipment : update 
+
+    3> CMD_NGTray_Off2 : NG 트레이 투입 요청
+        - SP_spSetTrayCellOutput
+        - tTrayCurr : select
+        - tMstEquipment : update 
+
+    4-1> CMD_AutoInput : 자동 투입 셀 투입 요청
+        - tCellCurr : select
+        - tTrayCurr : select
+        - SP_spSetProcStartEndCell
+        - SP_spSetTrayCellOutputCell
+        - tMstEQPGradeDef : select
+        - tMstCellGrade : select
+        - SP_spSetCellMove2
+        - tCellCurr : update
+        
+    4-2> CMD_HandInput : 수동 투입 셀 투입 요청
+        - tCellCurr : select
+        - tTrayCurr : select
+        - SP_spGetRecipeBody
+        - tMstAgingRack : select 
+        - SP_spSetAgingRack
+        - SP_spSetProcStartEndCell
+        - SP_spSetTrayCellOutputCell
+        - tMstEQPGradeDef : select
+        - tMstCellGrade : select
+        - SP_spSetCellMove2
+        - tCellCurr : update
+
+    5> CMD_InTrayOutput_Off2 : 투입트레이 배출 요청
+        - tCellCurr : select
+        - tMstEquipment : update 
+
+    6> CMD_GradeReq : 셀 배출전 등급요청 요청
+        - tMstRouteOper, tCellCurr : query
+        - tCellCurr : select
+        - tMstEQPGradeDef : select
+        - tMstCellGrade : select 
+        - tCellCurr : update 
+        - tMstEquipment : select
+        - SP_spSetTrayCellInputCell
+        - SP_spSetCellMove2
+        - tCellCurr : select 
+        - spMeaData_APD
+        - SP_spSetProcStartEndCell        
+
+    7> CMD_OutTrayOutput_Off2 : 배출(OK)트레이 배출 요청
+        - tTrayCurr : select
+        - tMstEquipment : update 
+        - tMstAgingRack : select 
+        - SP_spSetAgingRack
+        - tMoveToHist : insert
+
+    8> CMD_NGTrayOutput_Off2 : NG 트레이 배출 요청
+        - tMstEquipment : update 
+
+    9> CMD_ForceOut_OK_On : 셀 스크랩(강제배출) 요청
+        - SP_spSetBadCell
+
+
+2. Jifo 공정순서
+    1> CMD_MCInputTrayTrigger : 투입부 트레이 도착 보고
+        - tTrayCurr : select
+        - tMstEquipment : update 
+
+    2> CMD_MCStartMoveCellTrigger : 셀 이재(로드포트 -> 로드버퍼) 작업 시작 보고
+        - tTrayCurr : select
+        
+    3> CMD_MCLoadCellTrigger : 로드 셀 BCR 보고 
+        - tCellCurr : select
+        - tTrayCurr : select
+        - SP_spSetTrayCellOutputCell
+        - tTrayCurr : update
+        - SP_spSetJFBufCurr
+
+    4> CMD_MCEndMoveCellTrigger : 셀 이재 작업 완료 보고
+        - tTrayCurr : select
+        - tMstEquipment : update         
+
+    5> CMD_MCCompleteMoveLoadBufferTrigger : 로드버퍼 이재 완료 보고
+        - tCellCurr : select
+        - SP_spSetJFBufCurr
+        - spGetEmptyJigID
+        - tTrayCurr : update 
+        
+    6-1> 6. CMD_MCDisposeTrayTrigger : 투입트레이가 배출(OK)트레이로 도착 보고 ( 배출(OK) 트레이는 투입트레이로 투입해서 배출포트로 이동 )
+        - tMstEquipment : update (1) 
+        - tMstEquipment : update (2)
+
+    6-2> 12. CMD_MCNGTrayTrigger : NG 트레이 도착 보고 ( NG 트레이는 NG포트 에서 직접 투입 )
+        - tMstEquipment : update
+
+
+    # 이 사이에 FormationBiz & FormationSch <-> 지그 제어SW PC 통신
+        - 지그 제어SW PC 1대가 8개 지그 관리 구조.
+        - config.json 참고.  
+
+    7> CMD_MCUnloadBufferInputTrigger : 언로드버퍼 투입 보고
+        - tCellCurr : select
+        - SP_spSetJFBufCurr
+        - tTrayCurr : select 
+        
+    8> CMD_MCUnloadCheckCellTrigger : 언로드 셀 BCR 보고
+        - tCellCurr : select
+        - tMstEquipment : select 
+        - SP_spSetTrayCellInputCell
+        - SP_spSetCellMove2
+        - SP_spSetJFBufCurr
+
+    9> CMD_MCUnloadBufferOutputTrigger : 언로드버퍼 배출 완료 보고
+        - tJFBufCurr : select 
+        - tCellCurr : select
+        - SP_spSetJFBufCurr
+        - tCellCurr : update 
+
+    10> CMD_MCCompleteDisposeCellTrigger : 셀 배출(OK) 작업 완료 보고
+        - tCellCurr : select
+        - tMstEquipment : update
+        - tTrayCurr : select 
+        - tMstAgingRack : select 
+        - SP_spSetAgingRack
+        - tTrayCurr : select
+        - tMoveToHist : insert 
+
+    11> CMD_MCCompleteNGCellTrigger : NG 셀 배출(NG) 작업 완료 보고 
+        - tMstEquipment : update
+        - tCellCurr : select
+        - tTrayCurr : select (1)
+        - tTrayCurr : select (2)
+        - tMstEquipment : update
+
+    13> CMD_HostMessage : 호스트 에러 메시지 작성
+
+
+3. 지그 ip/port 
+    1-1> "JiFo Jig #11",
+        - ip    : "192.168.200.101",
+        - port  : 10101
+    1-2> "JiFo Jig #12",
+        - ip    : "192.168.200.101",
+        - port  : 10102
+    1-3> "JiFo Jig #13",
+        - ip    : "192.168.200.101",
+        - port  : 10103
+    1-4> "JiFo Jig #14",
+        - ip    : "192.168.200.101",
+        - port  : 10104
+    1-5> "JiFo Jig #15",
+        - ip    : "192.168.200.101",
+        - port  : 10105
+    1-6> "JiFo Jig #16",
+        - ip    : "192.168.200.101",
+        - port  : 10106
+    1-7> "JiFo Jig #17",
+        - ip    : "192.168.200.101",
+        - port  : 10107
+    1-8> "JiFo Jig #18",
+        - ip    : "192.168.200.101",
+        - port  : 10108
+    2-1> "JiFo Jig #21",
+        - ip    : "192.168.200.102",
+        - port  : 10201
+    2-2> "JiFo Jig #22",
+        - ip    : "192.168.200.102",
+        - port  : 10202
+    2-3> "JiFo Jig #23",
+        - ip    : "192.168.200.102",
+        - port  : 10203
+    2-4> "JiFo Jig #24",
+        - ip    : "192.168.200.102",
+        - port  : 10204
+    2-5> "JiFo Jig #25",
+        - ip    : "192.168.200.102",
+        - port  : 10205
+    2-6> "JiFo Jig #26",
+        - ip    : "192.168.200.102",
+        - port  : 10206
+    2-7> "JiFo Jig #27",
+        - ip    : "192.168.200.102",
+        - port  : 10207
+    2-8> "JiFo Jig #28",
+        - ip    : "192.168.200.102",
+        - port  : 10208
+
+
+4. 지그 공정(OperGroup) 정보
+	1> 충전(1) : tCellProCHG
+	2> 방전(2) : tCellProCHG
+	3> OCV(3) : tCellProOCV
+	4> DCIR(4) : tCellProDCIR
+	5> DCIRChg(B) : tCellProDCIRChg
+	6> Rest(8) : tCellProRest
+
