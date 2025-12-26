@@ -7,7 +7,7 @@ import lombok.Data;
 
 // 43. 투입 Tray 전체 Cell Valid Check 요청 with TrayID
 @Data
-public class Event43EqpINletTrayAllCellValidCheckRequest {
+public class Event43EqpInletTrayAllCellValidCheckRequest {
 
     @Id
     private Long timestamp;

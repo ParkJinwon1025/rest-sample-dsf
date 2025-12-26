@@ -7,7 +7,7 @@ import lombok.Data;
 
 // 23. 배출 Tray Break 완료 요청
 @Data
-public class Event23EqpOutletTrayBreakCompleteRequest {
+public class Event23EqpOutletTrayBreakCompleteReport {
 
     @Id
     private Long timestamp;
